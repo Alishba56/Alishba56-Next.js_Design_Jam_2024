@@ -29,7 +29,7 @@ const Page = () => {
         const result: Order[] = await client.fetch(`*[_type == "order"]`);
         const filteredData = result.filter((item) => item.user === user?.id);
         setData(filteredData);
-      } catch (err) {
+      } catch () {
         setError("Failed to fetch orders. Please try again later.");
       } finally {
         setLoading(false);
