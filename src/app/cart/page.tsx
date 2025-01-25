@@ -18,7 +18,7 @@ interface ProductType {
       _type: 'reference';
     };
 }
-
+}
 const Page = () => {
   const [cart, setCart] = useState<string[]>([]); // Cart item IDs
   const [products, setProducts] = useState<ProductType[]>([]); // Cart products
