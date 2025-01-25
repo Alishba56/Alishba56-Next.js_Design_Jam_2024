@@ -5,17 +5,14 @@ import Link from "next/link";
 import { AiFillDelete } from "react-icons/ai";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import type { SanityImageSource } from '@sanity/image-url';
+
 
 interface ProductType {
   _id: string;
   title: string;
   price: number;
-  productImage?: {
-    asset: {
-      _ref: string;
-      _type: string;
-    };
-  };
+  productImage?: SanityImageSource;
 }
 
 const Page = () => {
