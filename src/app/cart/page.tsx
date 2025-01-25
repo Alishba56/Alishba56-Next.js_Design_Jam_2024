@@ -11,7 +11,7 @@ interface ProductType {
   _id: string;
   title: string;
   price: number;
-  productImage?:  {
+  productImage:  {
     _type: 'image';
     asset: {
       _ref: string; // Reference to the image asset
