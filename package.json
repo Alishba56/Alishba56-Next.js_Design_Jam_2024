@@ -2,25 +2,37 @@
   "name": "hackathon-03-honest-bazar",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-data": "node ./importData.mjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.15",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.70.0",
+    "hackathon-03-honest-bazar": "file:",
+    "next": "14.2.16",
+    "next-sanity": "^9.8.38",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.16"
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.4.0",
+    "sanity": "^3.70.0",
+    "styled-components": "^6.1.14"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/lodash": "^4.17.14",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.16",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.16"
+    "typescript": "^5"
   }
 }
