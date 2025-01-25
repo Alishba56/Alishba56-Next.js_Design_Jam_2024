@@ -1,0 +1,11 @@
+Test Case ID,Test Case Description          ,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC001,Validate product listing page,Open product page > Verify products,Products displayed correctly,Products displayed correctly,Passed,High,-,No issues found
+TC002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Medium,-,Handled gracefully
+TC003,Check cart functionality,Add product to cart > Verify cart contents,Cart updates with added product,Cart updates as expected,Passed,High,-,Works as expected
+TC004,Ensure responsiveness on mobile,Resize browser window > Check layout,Layout adjusts properly to screen size,Responsive layout working as intended,Passed,Medium,-,Test successful
+TC005,Test search functionality,"Enter query in search bar, check results	",Correct results matching query,query matches result	,Passed,High,-,sucessfully added
+TC006,Verify Sign-Up functionality (Clerk),1. Navigate to sign-up page. 2. Enter valid details. 3. Submit.,User successfully signed up and redirected.,User successfully signed up and redirected.,Passed,High,-,sucessfully signed Up
+TC007,Dynamic routing for product,Click on a product,Individual product page loads and open detailed page,Product detail page opens,Passed,High,-,Works as expected
+TC008,Add product to wishlist        ,Product add to wishlistcart,but not showing add products,not open wishlist page,failed,low,-,need optimization
+TC009,Fallback UI for offline errors,Disconnect wifi and loads product ,"Fallback UI message display ""loading ,not custumer found""	",message displayed as expected	,Passed,High,-,sucessfully displayed
+TC010,Verify Sign-In functionality (Clerk),1. Navigate to sign-In page. 2. Enter valid details. 3. Submit.,User successfully signed In and redirected.,User successfully signed up and redirected.,Passed,High,-,sucessfully signed In
