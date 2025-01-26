@@ -17,8 +17,8 @@ Honest Bazar is built to demonstrate:
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, CSS
-- **Backend**: Node.js, Express
-- **Database**: MongoDB
+- **Backend**: Node.js
+- **Database**: Sanity
 - **Hosting**: Vercel (Frontend) and Render (Backend)
 
 ## Folder Structure
