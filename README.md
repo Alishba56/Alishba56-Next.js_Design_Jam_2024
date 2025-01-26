@@ -18,7 +18,7 @@ Honest Bazar is built to demonstrate:
 ## Tech Stack
 - **Frontend**: React, TypeScript, CSS
 - **Backend**: Node.js, Express
-- **Database**: Sanity
+- **Database**: MongoDB
 - **Hosting**: Vercel (Frontend) and Render (Backend)
 
 ## Folder Structure
@@ -31,9 +31,24 @@ Honest Bazar is built to demonstrate:
 │   └── /utils         # Helper functions and utilities
 ├── /documents          # Reports and project documentation
 ├── .env                # Environment variables (not included in the repo)
-├── README.md           # Project summary and setup instructions
+├── README.md           # Summary of project activities
 └── package.json        # Project dependencies and scripts
 ```
+
+## Summary of Updates
+- **Project Setup and Deployment Process**:
+  - Detailed instructions for setting up the project locally and deploying to staging environments.
+- **Key Activities (Days 1 to 6)**:
+  - Day 1: Laying_the_Foundation_for_Your_Marketplace_Journey.
+  - Day 2: Planning_the_Technical_Foundation.
+  - Day 3: API_Integration_and_Data_Migration.
+  - Day 4: Building_Dynamic_Frontend_Components_for_Honest Bazar.
+  - Day 5:Testing_Error_Handling_and_Backend_Integration_Refinement
+  - Day 6: Deployment Preparation and Staging Environment Setup 
+- **Folder Structure Descriptions**:
+  - `/src`: Source code for the application.
+  - `/documents`: Includes reports and detailed documentation.
+  - `README.md`: Summary of project activities and setup instructions.
 
 ## Setup and Deployment
 ### Prerequisites
