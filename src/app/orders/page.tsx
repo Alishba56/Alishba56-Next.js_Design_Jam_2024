@@ -34,28 +34,44 @@ const Page = () => {
   };
 
   useEffect(() => {
+    if (!user || !user.id) return;
+
     const fetchData = async () => {
+      setLoading(true);
       try {
-        const result: Order[] = await client.fetch(`*[_type == "order"]`);
-        const filteredData = result.filter((item) => item.user === user?.id);
-        setData(filteredData);
-      } catch {
+        const result: Order[] = await client.fetch(
+          `*[_type == "order"]{_id, _createdAt, firstName, email, status, user, products}`
+        );
+        console.log("Fetched Orders:", result); // Debugging
+        setData(result.filter((item) => item.user === user.id));
+      } catch (error) {
+        console.error("Error fetching orders:", error);
         setError("Failed to fetch orders. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
 
-    if (user) fetchData();
+    fetchData();
   }, [user]);
 
   const deleteOrder = async (orderId: string) => {
     try {
+      const { client } = await import("@/sanity/lib/client");
       await client.delete(orderId);
       setData((prevData) => prevData.filter((order) => order._id !== orderId));
-    } catch {
+    } catch (error) {
+      console.error("Error deleting order:", error);
       setError("Failed to delete order. Please try again later.");
     }
+  };
+
+  const getStatusClass = (status: string | undefined) => {
+    if (!status) return "bg-gray-100 text-gray-800";
+    const lowerStatus = status.toLowerCase();
+    if (lowerStatus === "processing") return "bg-yellow-100 text-yellow-800";
+    if (lowerStatus === "completed") return "bg-green-100 text-green-800";
+    return "bg-red-100 text-red-800";
   };
 
   if (loading) {
@@ -115,15 +131,9 @@ const Page = () => {
                     {order.products?.length || 0}
                   </p>
                   <span
-                    className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                      order.status === "Processing"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : order.status === "Completed"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
-                    }`}
+                    className={`px-3 py-1 text-xs font-semibold rounded-full ${getStatusClass(order.status)}`}
                   >
-                    {order.status || "Processing"}
+                    {order.status || "processing"}
                   </span>
                 </div>
                 <button
@@ -140,7 +150,7 @@ const Page = () => {
       {selectedOrder && (
         <div className="mt-10 p-6 bg-gray-100 rounded-lg shadow-lg">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-gray-800"> Details</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Details</h2>
             <button
               onClick={closeProductDetails}
               className="text-red-500 hover:text-red-700"
